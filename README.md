@@ -1,8 +1,8 @@
-# pic_empty.pas
+# библиотека pic_empty.pas
+
+## Описание ф-ционала
+
 Проверка файла в формате jpg на наличие изображения.
-
-## Описание
-
 ```pas
 function peIsPicEmpty(const jpgFileName:string;const density:single;const level:integer):integer;
 ```
