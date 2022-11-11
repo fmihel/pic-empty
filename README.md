@@ -1,6 +1,19 @@
 # pic-empty
 Проверка файла в формате jpg на наличие изображения.
 
+## Описание
+
+```pas
+function peIsPicEmpty(const jpgFileName:string;const density:single;const level:integer):integer;
+```
+```jpgFileName``` - абсолютный путь к файлу\
+```density``` - плотность заполнения, выше которой считаем что рисунок заполнен\
+```level``` - уровень яркости (255- белый .... 0 - черный),   меньше которой ( по одной компоненте rgb) 
+считаем, что цвет невидим 
+
+
+
+
 ## Пример использования
 ```pas
 uses pic_empty;
@@ -17,15 +30,14 @@ begin
         res:=peIsPicEmpty(OpenDialog1.FileName,5,200);
         memo1.Lines.Add('result: '+IntToStr(res));
         if (res = 1) then
-            memo1.Lines.Add('empty')
+            memo1.Lines.Add('пустой')
         else if (res = 0) then
-            memo1.Lines.Add('filled')
+            memo1.Lines.Add('заполненный')
         else
-            memo1.Lines.Add('error');
+            memo1.Lines.Add('ошибка');
     end;
 
 end;
-
 
 ```
 
